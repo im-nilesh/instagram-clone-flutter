@@ -92,7 +92,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     bottom: -10,
                     left: 80,
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: selectImage,
                       icon: const Icon(Icons.add_a_photo),
                     ),
                   ),
