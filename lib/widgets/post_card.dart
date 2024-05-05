@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:instagram/utils/colors.dart';
 
 class PostCard extends StatelessWidget {
-  const PostCard({Key? key}) : super(key: key);
+  const PostCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class PostCard extends StatelessWidget {
                 vertical: 4,
                 horizontal: 16,
               ).copyWith(right: 0),
-              child: const Row(
+              child: Row(
                 children: [
                   CircleAvatar(
                     radius: 16,
@@ -27,7 +27,7 @@ class PostCard extends StatelessWidget {
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.only(left: 8),
+                      padding: const EdgeInsets.only(left: 8),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +41,33 @@ class PostCard extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => Dialog(
+                          child: ListView(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 16,
+                            ),
+                            shrinkWrap: true,
+                            children: [
+                              'Delete',
+                            ]
+                                .map((e) => InkWell(
+                                      onTap: () {},
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          vertical: 12,
+                                          horizontal: 16,
+                                        ),
+                                        child: Text(e),
+                                      ),
+                                    ))
+                                .toList(),
+                          ),
+                        ),
+                      );
+                    },
                     icon: Icon(Icons.more_vert),
                   )
                 ],
