@@ -73,6 +73,49 @@ class PostCard extends StatelessWidget {
                 ],
               ),
             ),
+
+            //IMAGE SECTION
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.35,
+              width: double.infinity,
+              child: Image.network(
+                  'https://static.vecteezy.com/system/resources/thumbnails/021/746/785/small/holding-a-tree-in-a-ball-ecology-and-environment-concept-with-generative-ai-photo.jpg',
+                  fit: BoxFit.cover),
+            ),
+
+            //LIKE COMMENT SECTION
+            Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.comment,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.send,
+                  ),
+                ),
+                Expanded(
+                  child: Align(
+                    alignment: Alignment.bottomRight,
+                    child: IconButton(
+                      icon: const Icon(Icons.bookmark),
+                      onPressed: () {},
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ));
   }
