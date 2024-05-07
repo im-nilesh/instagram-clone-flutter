@@ -123,7 +123,7 @@ class _PostCardState extends State<PostCard> {
                       ),
                       onEnd: () {
                         setState(() {
-                          isLikeAnimating = true;
+                          isLikeAnimating = false;
                         });
                       },
                     ),
