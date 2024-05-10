@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram/utils/colors.dart';
+import 'package:instagram/widgets/comment_card.dart';
 
 class CommentsScreen extends StatefulWidget {
   const CommentsScreen({super.key});
@@ -17,6 +18,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
         title: const Text('Comments'),
         centerTitle: false,
       ),
+      body: CommentCard(),
       bottomNavigationBar: SafeArea(
         child: Container(
           height: kToolbarHeight,
