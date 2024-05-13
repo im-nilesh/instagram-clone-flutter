@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram/utils/colors.dart';
+import 'package:instagram/widgets/follow_button.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -35,18 +36,55 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     Expanded(
                       flex: 1,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      child: Column(
                         children: [
-                          buildStatColumn(20, "posts"),
-                          buildStatColumn(200, "followers"),
-                          buildStatColumn(20, "following"),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              buildStatColumn(20, "posts"),
+                              buildStatColumn(200, "followers"),
+                              buildStatColumn(20, "following"),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              FollowButton(
+                                text: 'Edit Profile',
+                                backgroundColor: mobileBackgroundColor,
+                                borderColor: Colors.grey,
+                                textColor: primaryColor,
+                                function: () {},
+                              )
+                            ],
+                          )
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.only(
+                    top: 15,
+                  ),
+                  child: Text(
+                    'username',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.only(
+                    top: 1,
+                  ),
+                  child: Text(
+                    'Some description',
+                  ),
+                )
               ],
             ),
           )
