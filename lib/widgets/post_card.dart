@@ -42,7 +42,7 @@ class _PostCardState extends State<PostCard> {
           .get();
       commentLen = snap.docs.length;
     } catch (e) {
-      showSnackBar(e.toString(), context);
+      showSnackBar(context, e.toString());
     }
     setState(() {});
   }
